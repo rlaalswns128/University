@@ -1,0 +1,96 @@
+/* src/pages/pages.css */
+.whisky-results h2 {
+  margin-left: 180px;
+}
+
+
+/* HomePage styles */
+.home-page {
+  padding: 2rem;
+}
+
+/* src/pages/WhiskyPage.css */
+/* Whisky Details Page */
+.whisky-details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whisky-header-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.whisky-main-image {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.whisky-main-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.whisky-description,
+.whisky-details,
+.whisky-reviews,
+.whisky-images {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.whisky-description h2,
+.whisky-details h2,
+.whisky-reviews h2,
+.whisky-images h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.whisky-description p,
+.whisky-details p,
+.whisky-reviews p,
+.whisky-images p {
+  margin: 10px 0;
+}
+
+.whisky-details-section {
+  margin-bottom: 20px;
+}
+
+.whisky-details-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.whisky-details-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.whisky-review {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.whisky-review h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.whisky-image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.whisky-image-gallery img {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+}

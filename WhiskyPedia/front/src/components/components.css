@@ -1,0 +1,293 @@
+/* src/components/components.css */
+
+/* SearchBar styles */
+.search-bar {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.search-bar h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-categories {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-categories button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+}
+
+.search-categories button.active {
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+}
+
+.search-input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 50%;
+}
+
+.search-input input {
+  padding: 0.75rem 1rem;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.search-input .search-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  background-color: #1dbf73;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.dropdown-content {
+  padding: 1rem;
+  text-align: left;
+}
+
+.dropdown-content p {
+  margin: 0 0 0.5rem;
+  font-weight: bold;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content ul li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content ul li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* src/components/components.css */
+
+/* src/components/components.css */
+
+/* WhiskyCard Styles */
+.whisky-card {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 15px 0;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s;
+  background-color: white;
+  width: 800px;
+}
+
+.whisky-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.whisky-card-image {
+  flex: 1;
+  max-width: 150px;
+  margin-right: 15px;
+}
+
+.whisky-card-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.whisky-card-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.whisky-card-content h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.whisky-card-content p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.whisky-card-rating {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.whisky-card-rating span {
+  margin-right: 10px;
+}
+
+.whisky-card-link {
+  align-self: flex-start;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #f0c040;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.whisky-card-link:hover {
+  background-color: #e0b030;
+}
+
+/* WhiskyDesc Styles */
+.whisky-page {
+  padding: 20px;
+}
+
+.whisky-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.whisky-header h1 {
+  font-size: 2.5em;
+}
+
+.whisky-header-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.whisky-main-image {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.whisky-main-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.whisky-description h2,
+.whisky-details h2,
+.whisky-reviews h2,
+.whisky-images h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.whisky-description p,
+.whisky-details p,
+.whisky-reviews p,
+.whisky-images p {
+  margin: 10px 0;
+}
+
+.whisky-details-section {
+  margin-bottom: 20px;
+}
+
+.whisky-details-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.whisky-details-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.whisky-review {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.whisky-review h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.whisky-image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.whisky-image-gallery img {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Section styles */
+.newly-updated-whisky, .most-searched-whisky {
+  padding: 2rem;
+  margin-top: 2rem; /* Add margin to create space between the dropdown and these sections */
+}
+
+.newly-updated-whisky h2, .most-searched-whisky h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.newly-updated-whisky {
+  margin-top: 15rem; 
+}
+.whisky-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
