@@ -1,145 +1,161 @@
-🏥 Health Supplements Recommendation System
+# Health Supplements Recommendation System
 
-This project is a health supplement recommendation system designed to provide users with personalized product suggestions based on their health information and needs. The system leverages AI-powered embeddings, RAG (Retrieval-Augmented Generation), cosine similarity, and ChatGPT to match users to the most suitable supplements.
+Welcome to the **Health Supplements Recommendation System**! This project leverages advanced AI technologies and a robust backend infrastructure to provide personalized health supplement recommendations based on user health data and preferences.
 
-🚀 Features
-	•	External API Integration: Fetches health supplement data from external APIs and stores it in MongoDB.
-	•	Data Vectorization: Converts user health information and product data into vector representations using embeddings.
-	•	RAG-Based Search: Utilizes Retrieval-Augmented Generation for context-aware recommendations.
-	•	Caching: Implements caching to reduce redundant computations and optimize performance.
-	•	AI-Powered Recommendations: Uses ChatGPT to recommend products based on similarity scores and explain why they are suitable.
-	•	Cosine Similarity Matching: Finds the closest products to user preferences using vector similarity.
+---
 
-📁 Project Structure
+## Table of Contents
 
-.
-├── app.py                          # Flask application entry point
-├── routes/
-│   ├── data_routes.py              # Handles external data fetching and storage
-│   ├── gpt_routes.py               # Handles GPT-related operations
-│   ├── recommendation_routes.py    # Recommendation-related API endpoints
-├── services/
-│   ├── recommendation_service.py   # Recommendation logic with cosine similarity
-│   ├── cache_service.py            # Caching utilities
-│   ├── embeddings_service.py       # Handles vector embeddings
-├── models/
-│   ├── chatgpt_integration.py      # ChatGPT API integration
-│   ├── embeddings.py               # Embedding model integration
-├── utils/
-│   ├── config.py                   # Configuration variables
-│   ├── helpers.py                  # Data preprocessing and vectorization helpers
-│   ├── cache_service.py            # Caching utilities
-├── data/
-│   ├── sample_data.json            # Example data for testing
-├── requirements.txt                # Python dependencies
-├── README.md                       # Project documentation
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Project Structure](#project-structure)
+5. [Setup and Installation](#setup-and-installation)
+6. [How It Works](#how-it-works)
+7. [Endpoints](#endpoints)
+8. [Future Improvements](#future-improvements)
+9. [License](#license)
 
-🔧 Installation
+---
 
-Prerequisites
-	•	Python 3.8+
-	•	MongoDB
-	•	OpenAI API Key
+## Overview
 
-Steps
-	1.	Clone the repository:
+This project focuses on utilizing user health data, preferences, and modern AI techniques to recommend the most suitable health supplements. The system processes stored supplement data and compares it against user input using advanced embedding models and vector similarity calculations.
 
-git clone https://github.com/yourusername/health-supplements-recommender.git
-cd health-supplements-recommender
+---
 
+## Features
 
-	2.	Install dependencies:
+- **Personalized Recommendations**: Tailored suggestions based on health conditions, goals, and allergies.
+- **Vector-Based Similarity Matching**: High-accuracy matching using cosine similarity and embeddings.
+- **RAG (Retrieval-Augmented Generation)**: Efficient use of AI models to reduce token costs and provide accurate responses.
+- **Caching**: Speeds up repeated queries by storing results locally.
+- **Scalable Backend**: Flask server for processing, with support for MongoDB.
+- **Dynamic Data Processing**: Real-time analysis and data augmentation.
 
+---
+
+## Technologies Used
+
+- **Backend**: Flask, Python
+- **Database**: MongoDB
+- **AI Models**: OpenAI GPT, Vector Embeddings
+- **Search Augmentation**: Retrieval-Augmented Generation (RAG)
+- **Web Framework**: Spring Boot (for frontend integration)
+- **Frontend**: JSP, Bootstrap
+- **Deployment**: Docker (optional)
+
+---
+
+## Project Structure
+
+```plaintext
+health-supplements/
+├── ai/
+│   ├── app.py                # Flask server entry point
+│   ├── routes/
+│   │   ├── data_routes.py    # Handles external data fetching
+│   │   ├── gpt_routes.py     # AI interactions
+│   │   ├── recommendation_routes.py  # Recommendation logic
+│   ├── services/
+│   │   ├── recommendation_service.py # Main recommendation logic
+│   │   ├── embeddings_service.py     # Handles embeddings
+│   │   ├── cache_service.py          # Caching layer
+│   ├── utils/
+│   │   ├── helpers.py                # Preprocessing and vector generation
+│   │   ├── config.py                 # Configuration (API keys, DB URIs)
+│   ├── models/
+│   │   ├── chatgpt_integration.py    # GPT integration
+│   │   ├── embeddings.py             # Embedding generation
+├── web/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/supplements/ # Spring Boot backend
+│   │   │   ├── resources/templates/  # JSP templates
+├── README.md                         # Project documentation
+├── requirements.txt                  # Python dependencies
+```
+
+---
+
+## Setup and Installation
+
+**Prerequisites**
+- Python 3.8+
+- MongoDB installed and running
+- API keys for OpenAI and external health data API
+
+**Installation**
+1. Clone the repository:
+git clone https://github.com/yourusername/health-supplements.git
+cd health-supplements
+
+2. Set up the Python environment:
+cd ai
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 
+3. Configure environment variables:
+- Create a .env file in the ai/ directory with the following:
+OPENAI_API_KEY=your_openai_key
+MONGODB_URI=mongodb://localhost:27017/
+EXTERNAL_API_KEY=your_api_key
+EXTERNAL_API_URL=https://apis.data.go.kr/1471000/QdrgPrdtPrmsnInfoService03/getQdrgPrdtPrmsnInfoInq03
 
-	3.	Configure MongoDB:
-	•	Update the MONGODB_URI in utils/config.py with your MongoDB connection string.
-	4.	Add your OpenAI API Key:
-	•	Add your OpenAI API Key to CHATGPT_API_KEY in utils/config.py.
-	5.	Run the Flask server:
-
+4. Run the Flask server:
 python app.py
 
-🛠 API Endpoints
+5. Start the Spring Boot application: Navigate to web/src/main and run:
+./mvnw spring-boot:run
 
-1. Fetch and Store External Data
+---
 
-Endpoint: /api/fetch-and-save
-Method: POST
-Description: Fetches data from an external API and stores it in MongoDB.
+## How It Works
 
-2. Generate GPT Response
+**1.Data Collection**:
+- Fetch health supplement data via an external API.
+- Store data in MongoDB.
 
-Endpoint: /api/generate-response
-Method: POST
-Description: Generates a GPT-based response for a given prompt.
+**2.User Input**:
+- Collect user health details (e.g., age, conditions, allergies, goals).
 
-3. Recommend Products
+**3.Recommendation Process**:
+- Generate embeddings for user input and stored product data.
+- Compare vectors using cosine similarity.
+- Retrieve the top matching supplements.
+- Use GPT to refine recommendations.
 
-Endpoint: /api/recommend
-Method: POST
-Description: Recommends the top 5 products for the user and provides the most suitable product.
+---
 
-Sample Request:
+## Endpoints
 
-{
-  "age": 30,
-  "health_condition": ["diabetes", "high blood pressure"],
-  "allergies": ["gluten"],
-  "goals": ["boost immune system", "improve digestion"]
-}
+**Flask Server*
+1. /api/fetch-and-save
 
-Sample Response:
+- Method: POST
+- Description: Fetch and save external API data to MongoDB.
 
-{
-  "recommendations": [
-    {
-      "product": {
-        "item": {
-          "ITEM_NAME": "Product 1",
-          "EE_DOC_DATA": "Supports immune system",
-          "MAIN_INGR": "Vitamin C",
-          "ADIT_INGR": "Zinc"
-        }
-      },
-      "similarity": 0.95
-    }
-  ],
-  "final_recommendation": "We recommend Product 1 because..."
-}
+**2. /api/generate-response**
 
-🧠 Key Technologies
-	•	Flask: Serves as the backend framework.
-	•	MongoDB: Stores health supplement data and cache results.
-	•	ChatGPT: Powers the recommendation explanation.
-	•	Cosine Similarity: Compares user and product vectors.
-	•	RAG: Implements Retrieval-Augmented Generation to optimize token usage.
+- Method: POST
+- Description: Interact with GPT for product suggestions.
 
-📊 Recommendation Workflow
-	1.	Data Preprocessing:
-	•	User data (health conditions, goals, etc.) and product data (ingredients, classifications) are converted into natural language descriptions.
-	•	Descriptions are vectorized using embedding models.
-	2.	Vector Similarity:
-	•	Cosine similarity is calculated between user and product vectors.
-	•	Products with the highest similarity are shortlisted.
-	3.	RAG for Recommendation:
-	•	GPT is provided with a concise summary of the user’s data and top recommendations.
-	•	GPT selects the most suitable product and explains its choice.
-	4.	Caching:
-	•	Results are cached to avoid redundant calculations.
+**3. /api/recommend**
 
-🐛 Troubleshooting
-	•	MongoDB Authentication Error: Ensure your MONGODB_URI is correct and accessible.
-	•	OpenAI Token Limit: Reduce the amount of data sent in prompts by optimizing the data passed to GPT.
-	•	404 Errors: Verify the endpoints and their methods.
+- Method: POST
+- Description: Recommend supplements based on user input.
 
-📄 License
+---
+
+## Future Improvements
+
+- **Expand AI Model Integration**: Include Claude or other models for cost-efficiency.
+- **User Authentication**: Secure login and personalized dashboards.
+- **Enhanced Search**: Implement advanced filtering and sorting options.
+
+---
+
+## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-🙌 Contributions
-
-Contributions are welcome! Feel free to open issues or submit pull requests to improve this project.
-
-Now you have a complete and detailed README.md file for your project!
