@@ -32,8 +32,11 @@ A Flask-based backend system designed to recommend health supplements tailored t
 ├── config.py                  # Configuration for API keys and database
 ├── requirements.txt           # Python dependencies
 └── README.md                  # Project documentation
+```
 
-Installation
+---
+
+## Installation
 
 Prerequisites
 	•	Python 3.8 or later
