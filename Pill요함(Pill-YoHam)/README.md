@@ -134,8 +134,8 @@ health-supplements/
 
 ---
 
-## Project Review
-[Notion](https://www.notion.so/your-notion-doc-link)
+## Project Retrospectives
+[![Notion Icon](https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg)](https://www.notion.so/your-notion-doc-link)
 </details>
 
 <details>
@@ -262,7 +262,7 @@ health-supplements/
 ---
 
 ## 프로젝트 회고록
-[Notion](https://www.notion.so/your-notion-doc-link)
+[![Notion Icon](https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg)](https://www.notion.so/your-notion-doc-link)
 
 </details>
 
