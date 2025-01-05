@@ -9,7 +9,6 @@ This project is a health supplement recommendation system designed to provide us
 	2.	User Health Analysis
 	•	Users input their age, health conditions, allergies, and health goals via a web form.
 	•	AI models process user data to extract relevant health information.
- 
 	3.	AI-Powered Product Recommendations
 	•	Leverages GPT-based models to evaluate the most suitable health supplements.
 	•	Uses product ingredients, efficacy details, and classification to determine the best matches.
