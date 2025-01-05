@@ -16,7 +16,7 @@ Welcome to **Pill요함 (Pill-YoHam)**! This project leverages advanced AI techn
 2. [Features](#features)
 3. [Technologies Used](#technologies-used)
 4. [Project Structure](#project-structure)
-5. [Setup and Installation](#setup-and-installation)
+5. [Setup](#setup)
 6. [How It Works](#how-it-works)
 7. [Endpoints](#endpoints)
 8. [Future Improvements](#future-improvements)
@@ -83,7 +83,7 @@ health-supplements/
 
 ---
 
-## Setup and Installation
+## Setup
 
 **Prerequisites**
 - Python 3.8+
@@ -143,7 +143,7 @@ health-supplements/
 2. [주요 기능](#주요-기능)
 3. [사용 기술](#사용-기술)
 4. [프로젝트 구조](#프로젝트-구조)
-5. [설치 및 실행](#설치-및-실행)
+5. [실행](#실행)
 6. [작동 방식](#작동-방식)
 7. [엔드포인트](#엔드포인트)
 8. [향후 개선 사항](#향후-개선-사항)
@@ -209,13 +209,52 @@ health-supplements/
 ```
 ---
 
-## 설치 및 실행
+## 실행
 
 **필수 조건**
 - Python 3.8+
 - MongoDB 설치 및 실행
 - OpenAI 및 외부 건강 데이터 API 키
 
+---
+
+## 작동 방식
+
+**1. 데이터 수집**:
+- 외부 API를 통해 건강 보조제 데이터를 가져옵니다.
+- 데이터를 MongoDB에 저장합니다.
+
+**2. 사용자 입력**:
+- 사용자 건강 정보(예: 나이, 건강 상태, 알레르기, 목표 등)를 수집합니다.
+
+**3. 추천 프로세스**:
+- 사용자 입력과 저장된 제품 데이터를 기반으로 임베딩을 생성합니다.
+- 코사인 유사도를 사용하여 벡터를 비교합니다.
+- 가장 일치하는 건강 보조제를 검색합니다.
+- GPT를 사용해 추천을 세부적으로 조정합니다.
+
+---
+
+## 엔드포인트
+
+**Flask 서버**
+1. POST /api/fetch-and-save  
+   - 외부 API 데이터를 가져와 MongoDB에 저장합니다.
+
+2. POST /api/generate-response  
+   - GPT와 상호작용하여 제품 추천을 생성합니다.
+
+3. POST /api/recommend  
+   - 사용자 입력에 기반하여 건강 보조제를 추천합니다.
+
+---
+
+## 향후 개선 사항
+
+- **AI 모델 통합 확대**: 비용 효율성을 위해 Claude 또는 기타 모델 통합.
+- **사용자 인증**: 안전한 로그인 및 개인화된 대시보드 제공.
+- **고급 검색**: 고급 필터링 및 정렬 옵션 구현.
+  
 </details>
 
 ## License
