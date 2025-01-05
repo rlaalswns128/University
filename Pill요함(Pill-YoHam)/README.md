@@ -140,18 +140,18 @@ python app.py
 
 ## Endpoints
 
-**Flask Server*
+**Flask Server**
 1. /api/fetch-and-save
 
 - Method: POST
 - Description: Fetch and save external API data to MongoDB.
 
-**2. /api/generate-response**
+2. /api/generate-response
 
 - Method: POST
 - Description: Interact with GPT for product suggestions.
 
-**3. /api/recommend**
+3. /api/recommend
 
 - Method: POST
 - Description: Recommend supplements based on user input.
