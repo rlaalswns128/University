@@ -87,27 +87,37 @@ health-supplements/
 
 **Installation**
 1. Clone the repository:
+```
 git clone https://github.com/yourusername/health-supplements.git
 cd health-supplements
+```
 
 2. Set up the Python environment:
+```
 cd ai
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
 
 3. Configure environment variables:
 - Create a .env file in the ai/ directory with the following:
+```
 OPENAI_API_KEY=your_openai_key
 MONGODB_URI=mongodb://localhost:27017/
 EXTERNAL_API_KEY=your_api_key
 EXTERNAL_API_URL=https://apis.data.go.kr/1471000/QdrgPrdtPrmsnInfoService03/getQdrgPrdtPrmsnInfoInq03
+```
 
 4. Run the Flask server:
+```
 python app.py
+```
 
 5. Start the Spring Boot application: Navigate to web/src/main and run:
+```
 ./mvnw spring-boot:run
+```
 
 ---
 
