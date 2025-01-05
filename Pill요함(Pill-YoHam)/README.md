@@ -131,7 +131,11 @@ health-supplements/
 - **Expand AI Model Integration**: Include Claude or other models for cost-efficiency.
 - **User Authentication**: Secure login and personalized dashboards.
 - **Enhanced Search**: Implement advanced filtering and sorting options.
-  
+
+---
+
+## Project Review
+[Notion](https://www.notion.so/your-notion-doc-link)
 </details>
 
 <details>
@@ -254,11 +258,13 @@ health-supplements/
 - **AI 모델 통합 확대**: 비용 효율성을 위해 Claude 또는 기타 모델 통합.
 - **사용자 인증**: 안전한 로그인 및 개인화된 대시보드 제공.
 - **고급 검색**: 고급 필터링 및 정렬 옵션 구현.
-  
-</details>
 
-## Project Review 프로젝트 리뷰
-[My Notion Document](https://www.notion.so/your-notion-doc-link)
+---
+
+## 프로젝트 회고록
+[Notion](https://www.notion.so/your-notion-doc-link)
+
+</details>
 
 ## License
 
