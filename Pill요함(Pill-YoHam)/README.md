@@ -1,5 +1,3 @@
-Here’s a comprehensive README.md file for your project. It includes all the necessary details and documentation for someone to understand and run your project.
-
 🏥 Health Supplements Recommendation System
 
 This project is a health supplement recommendation system designed to provide users with personalized product suggestions based on their health information and needs. The system leverages AI-powered embeddings, RAG (Retrieval-Augmented Generation), cosine similarity, and ChatGPT to match users to the most suitable supplements.
