@@ -186,6 +186,7 @@ health-supplements/
 - MongoDB 설치 및 실행
 - OpenAI 및 외부 건강 데이터 API 키
 
+</details>
 ---
 
 ## License
