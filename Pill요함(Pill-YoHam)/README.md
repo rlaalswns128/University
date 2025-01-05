@@ -1,93 +1,89 @@
-# Pill요함 (Pill-YoHam)
+Here’s a comprehensive README.md file for your project. It includes all the necessary details and documentation for someone to understand and run your project.
 
-A Flask-based backend system designed to recommend health supplements tailored to user health conditions, goals, and allergies. This project uses **RAG (Retrieval-Augmented Generation)** techniques, cosine similarity, and OpenAI's GPT API to provide accurate and cost-efficient recommendations.
+🏥 Health Supplements Recommendation System
 
----
+This project is a health supplement recommendation system designed to provide users with personalized product suggestions based on their health information and needs. The system leverages AI-powered embeddings, RAG (Retrieval-Augmented Generation), cosine similarity, and ChatGPT to match users to the most suitable supplements.
 
-## Features
+🚀 Features
+	•	External API Integration: Fetches health supplement data from external APIs and stores it in MongoDB.
+	•	Data Vectorization: Converts user health information and product data into vector representations using embeddings.
+	•	RAG-Based Search: Utilizes Retrieval-Augmented Generation for context-aware recommendations.
+	•	Caching: Implements caching to reduce redundant computations and optimize performance.
+	•	AI-Powered Recommendations: Uses ChatGPT to recommend products based on similarity scores and explain why they are suitable.
+	•	Cosine Similarity Matching: Finds the closest products to user preferences using vector similarity.
 
-- **Data Ingestion**: Fetch health supplements data from external APIs and store it in MongoDB.
-- **Embeddings**: Generate embeddings for products and user data for vector-based similarity search.
-- **Recommendation System**: Match user requirements with product data using cosine similarity and GPT-based reasoning.
-- **Caching**: Minimize API usage and response time using a MongoDB-backed caching layer.
-- **RAG Implementation**: Combine retrieved product data with generative AI for optimal recommendations.
+📁 Project Structure
 
----
-
-## Project Structure
-
-```plaintext
 .
-├── app.py                     # Flask app entry point
+├── app.py                          # Flask application entry point
 ├── routes/
-│   ├── recommendation_routes.py  # Endpoints for product recommendations
+│   ├── data_routes.py              # Handles external data fetching and storage
+│   ├── gpt_routes.py               # Handles GPT-related operations
+│   ├── recommendation_routes.py    # Recommendation-related API endpoints
 ├── services/
-│   ├── recommendation_service.py # Recommendation logic
-├── utils/
-│   ├── helpers.py                # Embedding and preprocessing utilities
-│   ├── cache_service.py          # Caching implementation
+│   ├── recommendation_service.py   # Recommendation logic with cosine similarity
+│   ├── cache_service.py            # Caching utilities
+│   ├── embeddings_service.py       # Handles vector embeddings
 ├── models/
-│   ├── embeddings.py             # Integration with embedding API
-│   ├── chatgpt_integration.py    # GPT API interaction
-├── config.py                  # Configuration for API keys and database
-├── requirements.txt           # Python dependencies
-└── README.md                  # Project documentation
-```
+│   ├── chatgpt_integration.py      # ChatGPT API integration
+│   ├── embeddings.py               # Embedding model integration
+├── utils/
+│   ├── config.py                   # Configuration variables
+│   ├── helpers.py                  # Data preprocessing and vectorization helpers
+│   ├── cache_service.py            # Caching utilities
+├── data/
+│   ├── sample_data.json            # Example data for testing
+├── requirements.txt                # Python dependencies
+├── README.md                       # Project documentation
 
----
-
-## Installation
+🔧 Installation
 
 Prerequisites
-	•	Python 3.8 or later
-	•	MongoDB (local or cloud instance)
+	•	Python 3.8+
+	•	MongoDB
 	•	OpenAI API Key
 
-Setup
-	1.	Clone the repository
+Steps
+	1.	Clone the repository:
 
-git clone https://github.com/your-repo/health-supplements-recommendation.git
-cd health-supplements-recommendation
+git clone https://github.com/yourusername/health-supplements-recommender.git
+cd health-supplements-recommender
 
 
-	2.	Create a virtual environment and install dependencies
+	2.	Install dependencies:
 
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 
-	3.	Configure API Keys and Database
-	•	Open config.py and update the following:
-
-MONGODB_URI = "mongodb://localhost:27017/"
-CHATGPT_API_KEY = "your-openai-api-key"
-
-
-	4.	Run the server
+	3.	Configure MongoDB:
+	•	Update the MONGODB_URI in utils/config.py with your MongoDB connection string.
+	4.	Add your OpenAI API Key:
+	•	Add your OpenAI API Key to CHATGPT_API_KEY in utils/config.py.
+	5.	Run the Flask server:
 
 python app.py
 
+🛠 API Endpoints
 
-	5.	Test the API
-Use curl or Postman to test the recommendation endpoint:
+1. Fetch and Store External Data
 
-curl -X POST http://localhost:5001/api/recommend \
-     -H "Content-Type: application/json" \
-     -d '{
-           "age": 30,
-           "health_condition": ["diabetes", "high blood pressure"],
-           "allergies": ["gluten"],
-           "goals": ["boost immune system", "improve digestion"]
-         }'
+Endpoint: /api/fetch-and-save
+Method: POST
+Description: Fetches data from an external API and stores it in MongoDB.
 
-API Endpoints
+2. Generate GPT Response
 
-/api/recommend (POST)
+Endpoint: /api/generate-response
+Method: POST
+Description: Generates a GPT-based response for a given prompt.
 
-Description: Recommends health supplements based on user health data.
+3. Recommend Products
 
-Request Body:
+Endpoint: /api/recommend
+Method: POST
+Description: Recommends the top 5 products for the user and provides the most suitable product.
+
+Sample Request:
 
 {
   "age": 30,
@@ -96,60 +92,56 @@ Request Body:
   "goals": ["boost immune system", "improve digestion"]
 }
 
-Response:
+Sample Response:
 
 {
   "recommendations": [
     {
       "product": {
         "item": {
-          "ITEM_NAME": "Supplement A",
-          "EE_DOC_DATA_EXP": "Boosts immunity",
+          "ITEM_NAME": "Product 1",
+          "EE_DOC_DATA": "Supports immune system",
           "MAIN_INGR": "Vitamin C",
           "ADIT_INGR": "Zinc"
         }
       },
-      "similarity": 0.89
-    },
-    ...
+      "similarity": 0.95
+    }
   ],
-  "final_recommendation": "Supplement A is the best match because it aligns with your goals to boost immunity."
+  "final_recommendation": "We recommend Product 1 because..."
 }
 
-Key Technologies
-	•	Flask: Lightweight Python web framework.
-	•	MongoDB: NoSQL database to store and query supplement data.
-	•	OpenAI GPT API: Generate recommendations and reasoning.
-	•	RAG (Retrieval-Augmented Generation): Combines retrieval-based and generative AI for efficiency.
-	•	Cosine Similarity: Measures similarity between user and product embeddings.
-	•	Caching: Reduces redundant API calls and enhances performance.
+🧠 Key Technologies
+	•	Flask: Serves as the backend framework.
+	•	MongoDB: Stores health supplement data and cache results.
+	•	ChatGPT: Powers the recommendation explanation.
+	•	Cosine Similarity: Compares user and product vectors.
+	•	RAG: Implements Retrieval-Augmented Generation to optimize token usage.
 
-Development Roadmap
-	1.	Enhance User Data Handling:
-	•	Add more detailed user input fields (e.g., diet preferences, activity levels).
-	2.	Improve RAG Logic:
-	•	Experiment with additional vector search libraries like FAISS or Pinecone.
-	3.	Frontend Integration:
-	•	Build a user-friendly interface using React or a simple JSP-Spring Boot setup.
-	4.	Performance Optimization:
-	•	Implement batch processing for embeddings and caching layers.
+📊 Recommendation Workflow
+	1.	Data Preprocessing:
+	•	User data (health conditions, goals, etc.) and product data (ingredients, classifications) are converted into natural language descriptions.
+	•	Descriptions are vectorized using embedding models.
+	2.	Vector Similarity:
+	•	Cosine similarity is calculated between user and product vectors.
+	•	Products with the highest similarity are shortlisted.
+	3.	RAG for Recommendation:
+	•	GPT is provided with a concise summary of the user’s data and top recommendations.
+	•	GPT selects the most suitable product and explains its choice.
+	4.	Caching:
+	•	Results are cached to avoid redundant calculations.
 
-Contributing
-	1.	Fork the repository.
-	2.	Create a feature branch:
+🐛 Troubleshooting
+	•	MongoDB Authentication Error: Ensure your MONGODB_URI is correct and accessible.
+	•	OpenAI Token Limit: Reduce the amount of data sent in prompts by optimizing the data passed to GPT.
+	•	404 Errors: Verify the endpoints and their methods.
 
-git checkout -b feature/your-feature
-
-
-	3.	Commit your changes:
-
-git commit -m "Add your feature"
-
-
-	4.	Push your branch and create a pull request.
-
-License
+📄 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-This README is designed to be clear, structured, and informative while ensuring technical details are easy to understand. It also highlights the cutting-edge technologies used in the project.
+🙌 Contributions
+
+Contributions are welcome! Feel free to open issues or submit pull requests to improve this project.
+
+Now you have a complete and detailed README.md file for your project!
