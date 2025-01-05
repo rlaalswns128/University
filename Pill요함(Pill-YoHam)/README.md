@@ -187,7 +187,6 @@ health-supplements/
 - OpenAI 및 외부 건강 데이터 API 키
 
 </details>
----
 
 ## License
 
