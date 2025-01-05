@@ -1,8 +1,7 @@
 # Pill요함 (Pill-YoHam)
 
 Welcome to **Pill요함 (Pill-YoHam)**! This project leverages advanced AI technologies and a robust backend infrastructure to provide personalized health supplement recommendations based on user health data and preferences.
-
-
+&nbsp;&nbsp;
 환영합니다! **Pill요함 (Pill-YoHam)** 은 첨단 AI 기술과 안정적인 백엔드 인프라를 활용하여 사용자 건강 데이터와 선호도를 기반으로 맞춤형 건강 보조제 추천 서비스를 제공합니다.
 
 ---
