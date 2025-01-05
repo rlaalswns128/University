@@ -20,6 +20,7 @@ Welcome to **Pill요함 (Pill-YoHam)**! This project leverages advanced AI techn
 6. [How It Works](#how-it-works)
 7. [Endpoints](#endpoints)
 8. [Future Improvements](#future-improvements)
+9. [License](#License)
 
 ---
 
@@ -153,6 +154,7 @@ health-supplements/
 6. [작동 방식](#작동-방식)
 7. [엔드포인트](#엔드포인트)
 8. [향후 개선 사항](#향후-개선-사항)
+9. [라이센스](#License)
 
 ---
 
