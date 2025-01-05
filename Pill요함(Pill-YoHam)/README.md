@@ -1,6 +1,6 @@
-# Health Supplements Recommendation System
+# Pill요함(Pill-YoHam)
 
-Welcome to the **Health Supplements Recommendation System**! This project leverages advanced AI technologies and a robust backend infrastructure to provide personalized health supplement recommendations based on user health data and preferences.
+Welcome to the **Pill요함(Pill-YoHam)**! This project leverages advanced AI technologies and a robust backend infrastructure to provide personalized health supplement recommendations based on user health data and preferences.
 
 ---
 
