@@ -2,7 +2,7 @@
 
 Welcome to the **Pill요함(Pill-YoHam)**! This project leverages advanced AI technologies and a robust backend infrastructure to provide personalized health supplement recommendations based on user health data and preferences.
 
----
+----
 
 ## 🌐 Language / 언어 선택
 <details>
@@ -131,7 +131,7 @@ health-supplements/
 - **User Authentication**: Secure login and personalized dashboards.
 - **Enhanced Search**: Implement advanced filtering and sorting options.
 
----
+----
 
 <details>
 <summary>🇰🇷 한국어</summary>
@@ -186,7 +186,7 @@ health-supplements/
 - MongoDB 설치 및 실행
 - OpenAI 및 외부 건강 데이터 API 키
 
----
+----
 
 ## License
 
