@@ -4,6 +4,10 @@ Welcome to the **Pill요함(Pill-YoHam)**! This project leverages advanced AI te
 
 ---
 
+## 🌐 Language / 언어 선택
+<details>
+<summary>🇺🇸 English</summary>
+
 ## Table of Contents
 
 1. [Overview](#overview)
@@ -85,40 +89,6 @@ health-supplements/
 - MongoDB installed and running
 - API keys for OpenAI and external health data API
 
-**Installation**
-1. Clone the repository:
-```
-git clone https://github.com/yourusername/health-supplements.git
-cd health-supplements
-```
-
-2. Set up the Python environment:
-```
-cd ai
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-3. Configure environment variables:
-- Create a .env file in the ai/ directory with the following:
-```
-OPENAI_API_KEY=your_openai_key
-MONGODB_URI=mongodb://localhost:27017/
-EXTERNAL_API_KEY=your_api_key
-EXTERNAL_API_URL=https://apis.data.go.kr/1471000/QdrgPrdtPrmsnInfoService03/getQdrgPrdtPrmsnInfoInq03
-```
-
-4. Run the Flask server:
-```
-python app.py
-```
-
-5. Start the Spring Boot application: Navigate to web/src/main and run:
-```
-./mvnw spring-boot:run
-```
-
 ---
 
 ## How It Works
@@ -160,6 +130,61 @@ python app.py
 - **Expand AI Model Integration**: Include Claude or other models for cost-efficiency.
 - **User Authentication**: Secure login and personalized dashboards.
 - **Enhanced Search**: Implement advanced filtering and sorting options.
+
+---
+
+<details>
+<summary>🇰🇷 한국어</summary>
+
+## 목차
+
+1. [개요](#개요)
+2. [주요 기능](#주요-기능)
+3. [사용 기술](#사용-기술)
+4. [프로젝트 구조](#프로젝트-구조)
+5. [설치 및 실행](#설치-및-실행)
+6. [작동 방식](#작동-방식)
+7. [엔드포인트](#엔드포인트)
+8. [향후 개선 사항](#향후-개선-사항)
+9. [라이선스](#라이선스)
+
+---
+
+## 개요
+
+**Pill요함**은 사용자 건강 데이터와 선호도를 기반으로 가장 적합한 건강 보조제를 추천하기 위해 최신 AI 기술을 활용합니다. 저장된 보조제 데이터를 처리하고 사용자의 입력과 비교하여 고급 임베딩 모델과 벡터 유사도 계산을 활용합니다.
+
+---
+
+## 주요 기능
+
+- **맞춤형 추천**: 건강 상태, 목표, 알레르기에 기반한 맞춤형 추천.
+- **벡터 기반 유사도 매칭**: 코사인 유사도 및 임베딩을 활용한 고정밀 매칭.
+- **RAG (Retrieval-Augmented Generation)**: 효율적인 AI 모델 사용으로 비용 절감 및 정확한 응답 제공.
+- **캐싱**: 반복된 요청의 결과를 로컬에 저장하여 속도 향상.
+- **확장 가능한 백엔드**: MongoDB를 지원하는 Flask 서버.
+- **동적 데이터 처리**: 실시간 분석 및 데이터 증강.
+
+---
+
+## 사용 기술
+
+- **백엔드**: Flask, Python
+- **데이터베이스**: MongoDB
+- **AI 모델**: OpenAI GPT, 벡터 임베딩
+- **검색 증강**: Retrieval-Augmented Generation (RAG)
+- **웹 프레임워크**: Spring Boot
+- **프론트엔드**: JSP, Bootstrap
+- **배포**: Docker (선택 사항)
+
+---
+
+## 설치 및 실행
+
+**필수 조건**
+- Python 3.8+
+- MongoDB 설치 및 실행
+- OpenAI 및 외부 건강 데이터 API 키
 
 ---
 
