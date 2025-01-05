@@ -136,6 +136,8 @@ health-supplements/
 
 ## Project Retrospectives
 [![Notion Icon](https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg)](https://www.notion.so/your-notion-doc-link)
+
+---
 </details>
 
 <details>
@@ -264,6 +266,7 @@ health-supplements/
 ## 프로젝트 회고록
 [![Notion Icon](https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg)](https://www.notion.so/your-notion-doc-link)
 
+---
 </details>
 
 ## License
