@@ -20,7 +20,6 @@ Welcome to **Pill요함 (Pill-YoHam)**! This project leverages advanced AI techn
 6. [How It Works](#how-it-works)
 7. [Endpoints](#endpoints)
 8. [Future Improvements](#future-improvements)
-9. [License](#license)
 
 ---
 
@@ -148,7 +147,6 @@ health-supplements/
 6. [작동 방식](#작동-방식)
 7. [엔드포인트](#엔드포인트)
 8. [향후 개선 사항](#향후-개선-사항)
-9. [라이선스](#라이선스)
 
 ---
 
@@ -179,6 +177,36 @@ health-supplements/
 - **프론트엔드**: JSP, Bootstrap
 - **배포**: Docker (선택 사항)
 
+---
+
+## 프로젝트 구조
+
+```plaintext
+health-supplements/
+├── ai/
+│   ├── app.py                # Flask server entry point
+│   ├── routes/
+│   │   ├── data_routes.py    # Handles external data fetching
+│   │   ├── gpt_routes.py     # AI interactions
+│   │   ├── recommendation_routes.py  # Recommendation logic
+│   ├── services/
+│   │   ├── recommendation_service.py # Main recommendation logic
+│   │   ├── embeddings_service.py     # Handles embeddings
+│   │   ├── cache_service.py          # Caching layer
+│   ├── utils/
+│   │   ├── helpers.py                # Preprocessing and vector generation
+│   │   ├── config.py                 # Configuration (API keys, DB URIs)
+│   ├── models/
+│   │   ├── chatgpt_integration.py    # GPT integration
+│   │   ├── embeddings.py             # Embedding generation
+├── web/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/supplements/ # Spring Boot backend
+│   │   │   ├── resources/templates/  # JSP templates
+├── README.md                         # Project documentation
+├── requirements.txt                  # Python dependencies
+```
 ---
 
 ## 설치 및 실행
